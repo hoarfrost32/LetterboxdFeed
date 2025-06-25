@@ -1,24 +1,16 @@
 # Letterboxd Feed Web Component
 
-A simple, dependency-free Web Component to display the latest films from a user's public Letterboxd diary. It fetches the RSS feed, parses it, and renders a clean, styleable list of recently watched films.
+Fetch and display the latest films from your Letterboxd diary. It fetches the RSS feed, parses it, and renders a clean, styleable list of recently watched films.
 
-## Features
+![image](https://github.com/user-attachments/assets/7704471e-8709-46c6-a901-819f572e4210)
 
--   **Easy to Use**: Just drop the script tag and the custom element into your HTML.
--   **Zero Dependencies**: Written in plain vanilla JavaScript, so it's lightweight and fast.
--   **Customizable**: Control the number of films to show and customize the look and feel with CSS.
--   **Encapsulated**: Uses Shadow DOM to keep its styles from interfering with the rest of your page.
--   **Informative**: Displays film titles, release years, and star ratings.
+## Usage
 
-## Installation
-
-To use this component, include the `LetterboxdFeed.js` script in your HTML file. Make sure the path is correct based on your project structure.
+To use this component, include the `LetterboxdFeed.js` script in your HTML file.
 
 ```html
 <script src="path/to/LetterboxdFeed.js"></script>
 ```
-
-## Usage
 
 Once the script is included, you can add the `<letterboxd-feed>` custom element to your page. The `username` attribute is required.
 
@@ -27,8 +19,6 @@ Once the script is included, you can add the `<letterboxd-feed>` custom element 
 ```
 
 ### Example
-
-Here is a more complete example showing how to display the 10 most recent films for the user `dave`.
 
 ```html
 <!DOCTYPE html>
@@ -84,7 +74,3 @@ letterboxd-feed {
 | `--film-star-inactive-color` | The color of the empty portion of the stars.   | `color-mix(in hsl, #1e1e2e, white 10%)`        |
 | `--film-star-size`           | The font size of the rating stars.             | `1em`                                          |
 | `--film-max-width`           | The maximum width of the component container.  | `40rem`                                        |
-
-## How It Works
-
-This component fetches a user's public Letterboxd diary from their RSS feed (`https://letterboxd.com/USERNAME/rss/`). To bypass potential CORS issues and to simplify parsing the XML feed in the browser, it uses the free `rss2json.com` API to convert the RSS feed to JSON.
